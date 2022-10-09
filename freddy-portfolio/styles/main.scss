@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  font-family: 'Montserrat';
+}
+
+.main-content {
+  position: relative;
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+.fullscreen {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  background-image: url("../public/background-mobile.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 0 1rem 1rem;
+  
+  @media (min-width: 768px) {
+    background-image: url("../public/background.jpg");
+  }
+}
+
+.button {
+  color: #fff;
+  background-color: transparent;
+  font-size: 1rem;
+}
+
+.ant-drawer-right > .ant-drawer-content-wrapper {
+  top: 33%;
+  right: 0;
+  bottom: unset;
+};
