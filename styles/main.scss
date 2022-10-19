@@ -20,7 +20,7 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  padding: 0 1rem 1rem;
+  padding: 3rem;
   
   @media (min-width: 768px) {
     background-image: url("../public/background.jpg");
@@ -30,11 +30,28 @@ body {
 .button {
   color: #fff;
   background-color: transparent;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  height: 3rem;
+
+  &:hover, &:focus, &:active {
+    background-color: transparent;
+    color: #000;
+    border-color: #000;
+  }
+}
+
+.ant-drawer {
+  overflow: hidden;
 }
 
 .ant-drawer-right > .ant-drawer-content-wrapper {
-  top: 33%;
+  top: 25%;
   right: 0;
   bottom: unset;
+  
+  @media (min-width: 768px) {
+    top: 33%;
+    width: 50% !important;
+    font-size: 1rem;
+  }
 };
