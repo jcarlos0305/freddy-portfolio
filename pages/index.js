@@ -17,10 +17,16 @@ const Home = () => {
   return (
     <div className="main-content">
       <div className="fullscreen">
-        <Title style={{ color: "#fff" }}>FREDDY SANCHEZ</Title>
+        <Title className="title">FREDDY SÁNCHEZ</Title>
         <Space>
           <Button className="button" onClick={showDrawer}>
             About
+          </Button>
+          <Button className="button" onClick={showDrawer}>
+            Contact
+          </Button>
+          <Button className="button" onClick={showDrawer}>
+            Instagram
           </Button>
         </Space>
         <Drawer

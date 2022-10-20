@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
 }
 
 .main-content {
@@ -14,29 +14,44 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: space-between;
-  align-items: flex-end;
   background-image: url("../public/background-mobile.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  padding: 2rem 0 1rem;
   width: 100%;
-  padding: 3rem;
-  
+
   @media (min-width: 768px) {
+    padding: 3rem;
+    align-items: flex-end;
     background-image: url("../public/background.jpg");
+  }
+
+  .title {
+    color: #fff;
+    font-size: 2rem;
   }
 }
 
 .button {
   color: #fff;
   background-color: transparent;
-  font-size: 1.5rem;
-  height: 3rem;
+  font-size: 1rem;
+  height: 2rem;
+  line-height: 1rem;
 
-  &:hover, &:focus, &:active {
+  &:hover,
+  &:focus,
+  &:active {
     background-color: transparent;
     color: #000;
     border-color: #000;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 1.5rem;
+    height: 3rem;
   }
 }
 
@@ -48,10 +63,10 @@ body {
   top: 25%;
   right: 0;
   bottom: unset;
-  
+
   @media (min-width: 768px) {
     top: 33%;
     width: 50% !important;
     font-size: 1rem;
   }
-};
+}
