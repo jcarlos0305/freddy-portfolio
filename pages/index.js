@@ -18,15 +18,24 @@ const Home = () => {
     <div className="main-content">
       <div className="fullscreen">
         <Title className="title">FREDDY SÁNCHEZ</Title>
-        <Space>
-          <Button className="button" onClick={showDrawer}>
+        <Space size="large">
+          <Button class="button" onClick={showDrawer}>
             About
+            <div class="button__horizontal"></div>
+            <div class="button__vertical"></div>
           </Button>
-          <Button className="button" onClick={showDrawer}>
+          <Button class="button">
             Contact
+            <div class="button__horizontal"></div>
+            <div class="button__vertical"></div>
           </Button>
-          <Button className="button" onClick={showDrawer}>
+          <Button
+            class="button"
+            href="https://www.instagram.com/freddy.sanchez.g/"
+          >
             Instagram
+            <div class="button__horizontal"></div>
+            <div class="button__vertical"></div>
           </Button>
         </Space>
         <Drawer

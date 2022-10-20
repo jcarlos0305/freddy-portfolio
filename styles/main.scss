@@ -31,6 +31,8 @@ body {
   .title {
     color: #fff;
     font-size: 2rem;
+    letter-spacing: 0.1rem;
+    user-select: none;
   }
 }
 
@@ -40,6 +42,8 @@ body {
   font-size: 1rem;
   height: 2rem;
   line-height: 1rem;
+  border: 1px #fff solid;
+  user-select: none;
 
   &:hover,
   &:focus,
@@ -50,8 +54,82 @@ body {
   }
 
   @media (min-width: 768px) {
-    font-size: 1.5rem;
+    --offset: 4px;
+    --border-size: 1px;
+
+    font-size: 1rem;
     height: 3rem;
+    line-height: 1rem;
+    display: block;
+    position: relative;
+    padding: 0.5rem 1rem;
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: #fff;
+    text-transform: uppercase;
+
+    outline: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 0;
+    box-shadow: inset 0 0 0 var(--border-size) currentcolor;
+    transition: background 0.8s ease;
+
+    &:hover {
+      background: rgba(100, 0, 0, 0.03);
+    }
+
+    &__horizontal,
+    &__vertical {
+      position: absolute;
+      top: var(--horizontal-offset, 0);
+      right: var(--vertical-offset, 0);
+      bottom: var(--horizontal-offset, 0);
+      left: var(--vertical-offset, 0);
+      transition: transform 0.8s ease;
+      will-change: transform;
+
+      &::before {
+        content: "";
+        position: absolute;
+        border: inherit;
+      }
+    }
+
+    &__horizontal {
+      --vertical-offset: calc(var(--offset) * -1);
+      border-top: var(--border-size) solid currentcolor;
+      border-bottom: var(--border-size) solid currentcolor;
+
+      &::before {
+        top: calc(var(--vertical-offset) - var(--border-size));
+        bottom: calc(var(--vertical-offset) - var(--border-size));
+        left: calc(var(--vertical-offset) * -1);
+        right: calc(var(--vertical-offset) * -1);
+      }
+    }
+
+    &:hover &__horizontal {
+      transform: scaleX(0);
+    }
+
+    &__vertical {
+      --horizontal-offset: calc(var(--offset) * -1);
+      border-left: var(--border-size) solid currentcolor;
+      border-right: var(--border-size) solid currentcolor;
+
+      &::before {
+        top: calc(var(--horizontal-offset) * -1);
+        bottom: calc(var(--horizontal-offset) * -1);
+        left: calc(var(--horizontal-offset) - var(--border-size));
+        right: calc(var(--horizontal-offset) - var(--border-size));
+      }
+    }
+
+    &:hover &__vertical {
+      transform: scaleY(0);
+    }
   }
 }
 
